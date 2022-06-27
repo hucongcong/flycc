@@ -1,7 +1,9 @@
-'use strict';
+'use strict'
 
-module.exports = utils;
+function hello() {
+  return 'hello utils'
+}
 
-function utils() {
-    // TODO
+module.exports = {
+  hello
 }

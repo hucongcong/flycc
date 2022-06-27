@@ -26,5 +26,11 @@
   "gitHead": "391dc69e6c86de89e125131f288aa09db61c127c",
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "flycc": "bin/index.js"
+  },
+  "dependencies": {
+    "@flycc/utils": "^1.0.0"
   }
 }
