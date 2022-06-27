@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/hucongcong/flycc/issues"
   },
-  "gitHead": "6fbbdd59f31ece56319993eaf0d3f69d5725fe1b"
+  "gitHead": "391dc69e6c86de89e125131f288aa09db61c127c",
+  "publishConfig": {
+    "access": "public"
+  }
 }

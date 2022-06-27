@@ -4,5 +4,5 @@ module.exports = core
 
 function core() {
   // TODO
-  console.log('哈哈哈1')
+  console.log('哈哈123哈1231')
 }
