@@ -19,5 +19,8 @@
   "homepage": "https://github.com/hucongcong/flycc#readme",
   "devDependencies": {
     "lerna": "^5.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
