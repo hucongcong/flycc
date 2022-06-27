@@ -1,5 +1,10 @@
 {
-  "packages": ["core/*", "models/*", "utils/*", "commands/*"],
+  "packages": [
+    "core/*",
+    "models/*",
+    "utils/*",
+    "commands/*"
+  ],
   "useNx": false,
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
