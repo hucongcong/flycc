@@ -1,9 +1,9 @@
 {
-  "name": "@flycc/core",
+  "name": "@flycc/log",
   "version": "1.0.6",
-  "description": "core description",
+  "description": "log",
   "author": "hucongcong <flycc258@163.com>",
-  "homepage": "https://github.com/hucongcong/flycc/tree/main/packages/core#readme",
+  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/log#readme",
   "license": "ISC",
   "main": "lib/index.js",
   "directories": {
@@ -13,6 +13,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hucongcong/flycc.git"
@@ -23,19 +26,7 @@
   "bugs": {
     "url": "https://github.com/hucongcong/flycc/issues"
   },
-  "gitHead": "391dc69e6c86de89e125131f288aa09db61c127c",
-  "publishConfig": {
-    "access": "public"
-  },
-  "bin": {
-    "flycc": "bin/index.js"
-  },
   "dependencies": {
-    "@flycc/log": "^1.0.6",
-    "@flycc/utils": "^1.0.6",
-    "colors": "^1.4.0",
-    "minimist": "^1.2.6",
-    "root-check": "1.0.0",
-    "semver": "^7.3.7"
+    "npmlog": "^6.0.2"
   }
 }
