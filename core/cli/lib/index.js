@@ -113,7 +113,7 @@ function registerCommand() {
     .usage('<command> [options]')
     .option('-d --debug', '是否开启调试模式', false)
 
-  // 监听debug事件
+  // 监听debug事件1
   program.on('option:debug', () => {
     if (program.debug) {
       // 在debug模式下
