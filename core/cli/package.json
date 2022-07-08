@@ -1,6 +1,6 @@
 {
   "name": "@flycc/core",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "core description",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/packages/core#readme",
@@ -31,7 +31,7 @@
     "flycc": "bin/index.js"
   },
   "dependencies": {
-    "@flycc/log": "^1.0.7",
+    "@flycc/log": "^1.0.8",
     "@flycc/utils": "^1.0.6",
     "colors": "^1.4.0",
     "commander": "^9.3.0",
