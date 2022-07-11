@@ -1,9 +1,9 @@
 {
-  "name": "@flycc/get-npm-info",
+  "name": "@flycc/init",
   "version": "1.0.8",
-  "description": "get npm base info",
+  "description": "init",
   "author": "hucongcong <flycc258@163.com>",
-  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/get-npm-info#readme",
+  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/init#readme",
   "license": "ISC",
   "main": "lib/index.js",
   "directories": {
@@ -13,6 +13,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hucongcong/flycc.git"
@@ -22,6 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/hucongcong/flycc/issues"
-  },
-  "gitHead": "56ad01549621403d5173e777563d12e92feb346a"
+  }
 }

@@ -8,6 +8,7 @@ const { program } = require('commander')
 const log = require('@flycc/log')
 const { MIN_NODE_VERSION } = require('./constants')
 const path = require('path')
+const init = require('@flycc/init')
 
 /**
  * 检查版本号
@@ -113,8 +114,18 @@ function registerCommand() {
     .usage('<command> [options]')
     .option('-d --debug', '是否开启调试模式', false)
 
+  // 注册命令
+  program
+    // 定义命令
+    .command('init [name]')
+    // 定义选项
+    .option('-f --force', '是否强制初始化项目')
+    // 定义动作
+    .action(init)
+
   // 监听debug事件1
   program.on('option:debug', () => {
+    console.log(program.debug)
     if (program.debug) {
       // 在debug模式下
       log.level = 'verbose'
@@ -132,15 +143,17 @@ function registerCommand() {
     })
     console.log(colors.red('未知的命令 ' + obj[0]))
     if (availableCommands.length > 0) {
-      console.log(colors.green('可用命令' + availableCommands.join(',')))
+      console.log(
+        colors.green('可用命令 [' + availableCommands.join(',') + ']')
+      )
     }
   })
 
-  if (process.argv.length < 3) {
-    // 提供帮助信息
+  program.parse(process.argv)
+
+  // 如果没有输入额外的参数，提供帮助信息
+  if (program.args && program.args.length < 1) {
     program.help()
-  } else {
-    program.parse(process.argv)
   }
 }
 
