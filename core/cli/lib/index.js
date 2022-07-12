@@ -56,19 +56,8 @@ function checkEnv() {
 function core() {
   // console.log('core执行了')
   try {
-    // 检查入参
-    // checkInputArgs()
-    // 检查当前脚手架版本
-    checkPkgVersion()
-    // 检查nodejs版本
-    checkNodeVersion()
-    // root用户降级处理
-    checkRoot()
-    // 检查环境变量
-    checkEnv()
-    // 检查是否有新的版本
-    checkGlobalUpdate()
     // 执行初始化逻辑
+    prepare()
     // 注册命令
     registerCommand()
     log.success('cli', '初始化成功')
@@ -112,7 +101,8 @@ function registerCommand() {
     .name(Object.keys(pkg.bin)[0])
     .description('hcc自定义的脚手架，用于快速初始化项目和一键部署')
     .usage('<command> [options]')
-    .option('-d --debug', '是否开启调试模式', false)
+    .option('-d, --debug', '是否开启调试模式', false)
+    .option('-tp, --targetPath <targetPath>', '是否制定本地调试文件路径', '')
 
   // 注册命令
   program
@@ -123,10 +113,15 @@ function registerCommand() {
     // 定义动作
     .action(init)
 
-  // 监听debug事件1
-  program.on('option:debug', () => {
-    console.log(program.debug)
-    if (program.debug) {
+  // 监听targetPath的变化,将targetPath保存到环境变量中
+  program.on('option:targetPath', function () {
+    process.env.CLI_TARGET_PATH = this.opts().targetPath
+  })
+
+  // 监听debug事件
+  program.on('option:debug', function () {
+    const debug = this.opts().debug
+    if (debug) {
       // 在debug模式下
       log.level = 'verbose'
     } else {
@@ -155,6 +150,19 @@ function registerCommand() {
   if (program.args && program.args.length < 1) {
     program.help()
   }
+}
+
+function prepare() {
+  // 检查当前脚手架版本
+  checkPkgVersion()
+  // 检查nodejs版本
+  checkNodeVersion()
+  // root用户降级处理
+  checkRoot()
+  // 检查环境变量
+  checkEnv()
+  // 检查是否有新的版本
+  checkGlobalUpdate()
 }
 
 module.exports = core

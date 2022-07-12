@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '5.1.6',
+0 silly argv   '$0': 'lerna',
+0 silly argv   name: '@flycc/exec'
+0 silly argv }
+1 notice cli v5.1.6
+2 verbose rootPath /Users/hucc/Desktop/code/flycc
+3 error Error: Command failed with exit code 1: git config --get user.name
+3 error     at makeError (/Users/hucc/Desktop/code/flycc/node_modules/execa/lib/error.js:60:11)
+3 error     at Function.module.exports.sync (/Users/hucc/Desktop/code/flycc/node_modules/execa/index.js:194:17)
+3 error     at Object.execSync (/Users/hucc/Desktop/code/flycc/node_modules/@lerna/child-process/index.js:39:16)
+3 error     at CreateCommand.gitConfig (/Users/hucc/Desktop/code/flycc/node_modules/@lerna/create/index.js:181:25)
+3 error     at CreateCommand.initialize (/Users/hucc/Desktop/code/flycc/node_modules/@lerna/create/index.js:103:46)
