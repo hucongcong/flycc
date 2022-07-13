@@ -6,7 +6,7 @@ const SETTINGS = {
   init: '@flycc/init'
 }
 
-function index() {
+async function index() {
   // TODO
   //   console.log(process.env.CLI_TARGET_PATH, 123)
   // 1. 根据targetPath获取到modulePath
@@ -34,7 +34,7 @@ function index() {
       pkg.update()
     } else {
       // 安装包
-      pkg.install()
+      await pkg.install()
     }
   } else {
     pkg = new Package({
@@ -45,8 +45,10 @@ function index() {
   }
   // 获取入口文件的路由
   const rootFile = pkg.getRootFile()
-  // 加载入口文件
-  require(rootFile).apply(null, arguments)
+  if (rootFile) {
+    // 加载入口文件
+    require(rootFile).apply(null, arguments)
+  }
 }
 
 module.exports = index

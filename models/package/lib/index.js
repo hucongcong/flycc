@@ -22,8 +22,8 @@ class Package {
   exist() {}
 
   // 安装package
-  install() {
-    npmInstall({
+  async install() {
+    await npmInstall({
       // 安装路径
       root: this.targetPath,
       // 安装的包的存储目录
