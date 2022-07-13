@@ -13,4 +13,5 @@ function init(name, options) {
   console.log(name)
   console.log(options)
   console.log(process.env.CLI_TARGET_PATH)
+  console.log('发布新版本')
 }
