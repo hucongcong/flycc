@@ -8,7 +8,8 @@ const { program } = require('commander')
 const log = require('@flycc/log')
 const { MIN_NODE_VERSION } = require('./constants')
 const path = require('path')
-const init = require('@flycc/init')
+// const init = require('@flycc/init')
+const exec = require('@flycc/exec')
 
 /**
  * 检查版本号
@@ -68,19 +69,6 @@ function core() {
 }
 
 /**
- * 检查入参
- */
-function checkInputArgs() {
-  const minimist = require('minimist')
-  const args = minimist(process.argv.slice(2))
-
-  if (args.debug) {
-    // 在debug模式下
-    log.level = 'verbose'
-  }
-}
-
-/**
  * 检查是否需要全局更新
  */
 function checkGlobalUpdate() {
@@ -111,7 +99,7 @@ function registerCommand() {
     // 定义选项
     .option('-f --force', '是否强制初始化项目')
     // 定义动作
-    .action(init)
+    .action(exec)
 
   // 监听targetPath的变化,将targetPath保存到环境变量中
   program.on('option:targetPath', function () {

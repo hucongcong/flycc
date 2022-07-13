@@ -1,0 +1,35 @@
+{
+  "name": "@flycc/package",
+  "version": "1.0.0",
+  "description": "package Model",
+  "author": "hucongcong <flycc258@163.com>",
+  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/package#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hucongcong/flycc.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/hucongcong/flycc/issues"
+  },
+  "dependencies": {
+    "@flycc/utils": "^1.0.0",
+    "npminstall": "^6.4.0",
+    "pkg-dir": "5.0.0",
+    "user-home": "^3.0.0"
+  }
+}

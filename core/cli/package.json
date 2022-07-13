@@ -34,6 +34,7 @@
     "@flycc/log": "^1.0.8",
     "@flycc/utils": "^1.0.6",
     "@flycc/init": "^1.0.8",
+    "@flycc/exec": "^1.0.8",
     "colors": "^1.4.0",
     "commander": "^9.3.0",
     "dotenv": "^16.0.1",
