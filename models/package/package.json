@@ -1,6 +1,6 @@
 {
   "name": "@flycc/package",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "package Model",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/package#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/hucongcong/flycc/issues"
   },
   "dependencies": {
-    "@flycc/utils": "^1.0.9",
+    "@flycc/utils": "^1.0.10",
     "npminstall": "^6.4.0",
     "pkg-dir": "5.0.0",
     "user-home": "^3.0.0"
