@@ -29,5 +29,6 @@
   "dependencies": {
     "@flycc/package": "^1.0.9",
     "user-home": "^3.0.0"
-  }
+  },
+  "gitHead": "576d6d4fe96cc5bfa0c33b112aceec77c8b11dfe"
 }
