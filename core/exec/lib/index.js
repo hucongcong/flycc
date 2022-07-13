@@ -29,9 +29,10 @@ async function index() {
       storePath
     })
     // 判断包是否存在
-    if (pkg.exist()) {
+    if (await pkg.exist()) {
       // 更新包
-      pkg.update()
+      // 获取所有的版本
+      await pkg.update()
     } else {
       // 安装包
       await pkg.install()
@@ -43,6 +44,7 @@ async function index() {
       version
     })
   }
+  console.log(await pkg.exist())
   // 获取入口文件的路由
   const rootFile = pkg.getRootFile()
   if (rootFile) {

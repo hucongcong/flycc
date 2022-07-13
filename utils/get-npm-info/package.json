@@ -26,5 +26,9 @@
   "gitHead": "576d6d4fe96cc5bfa0c33b112aceec77c8b11dfe",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "semver": "^7.3.7"
   }
 }

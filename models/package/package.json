@@ -27,8 +27,11 @@
     "url": "https://github.com/hucongcong/flycc/issues"
   },
   "dependencies": {
+    "@flycc/get-npm-info": "^1.0.10",
     "@flycc/utils": "^1.0.10",
+    "fs-extra": "^10.1.0",
     "npminstall": "^6.4.0",
+    "path-exists": "4.0.0",
     "pkg-dir": "5.0.0",
     "user-home": "^3.0.0"
   },
