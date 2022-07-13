@@ -1,6 +1,6 @@
 {
   "name": "@flycc/package",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "package Model",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/package#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/hucongcong/flycc/issues"
   },
   "dependencies": {
-    "@flycc/get-npm-info": "^1.0.10",
+    "@flycc/get-npm-info": "^1.0.11",
     "@flycc/utils": "^1.0.10",
     "fs-extra": "^10.1.0",
     "npminstall": "^6.4.0",
