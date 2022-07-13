@@ -1,6 +1,6 @@
 {
   "name": "@flycc/exec",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "exec command",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/exec#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/hucongcong/flycc/issues"
   },
   "dependencies": {
-    "@flycc/package": "^1.0.0",
+    "@flycc/package": "^1.0.9",
     "user-home": "^3.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@flycc/get-npm-info",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "get npm base info",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/get-npm-info#readme",
