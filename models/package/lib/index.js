@@ -80,7 +80,6 @@ class Package {
 
   // 更新Package
   async update() {
-    console.log('update 逻辑')
     await this.prepare()
     // 1. 判断缓存的package是否是最新的版本
     const cacheVersion = await getLastestVersion(this.packageName)
@@ -89,7 +88,20 @@ class Package {
     // 3. 判断缓存的package是否存在
     if (!pathExists(cacheFilePath)) {
       // 4. 如果不存在，则安装最新的版本
-      await this.install()
+      await npmInstall({
+        // 安装路径
+        root: this.targetPath,
+        // 安装的包的存储目录
+        storeDir: this.storePath,
+        // 仓库地址, 默认是 npmjs.com，使用淘宝镜像
+        registry: 'https://registry.npmjs.org/',
+        pkgs: [
+          {
+            name: this.packageName,
+            version: latestVersion
+          }
+        ]
+      })
     } else {
       console.log('已经是最新版本了，无需更新')
     }
