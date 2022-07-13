@@ -44,11 +44,11 @@ async function index() {
       version
     })
   }
-  console.log(await pkg.exist())
+  // console.log(await pkg.exist())
   // 获取入口文件的路由
   const rootFile = pkg.getRootFile()
+  console.log(rootFile)
   if (rootFile) {
-    // 加载入口文件
     require(rootFile).apply(null, arguments)
   }
 }

@@ -25,10 +25,13 @@ class Package {
 
   // _@flycc_init@1.0.10@@flycc
   get cacheFilePath() {
-    return path.join(
-      this.storePath,
-      `_${this.prefix}@${this.version}@${this.packageName}`
-    )
+    if (this.storePath) {
+      return path.join(
+        this.storePath,
+        `_${this.prefix}@${this.version}@${this.packageName}`
+      )
+    }
+    return null
   }
 
   getLastestFilePath(version) {
@@ -67,8 +70,8 @@ class Package {
       // 安装的包的存储目录
       storeDir: this.storePath,
       // 仓库地址, 默认是 npmjs.com，使用淘宝镜像
-      // registry: 'https://registry.npmmirror.com/',
-      registry: 'https://registry.npmjs.org/',
+      registry: 'https://registry.npmmirror.com/',
+      // registry: 'https://registry.npmjs.org/',
       pkgs: [
         {
           name: this.packageName,
@@ -102,6 +105,7 @@ class Package {
           }
         ]
       })
+      this.version = latestVersion
     } else {
       console.log('已经是最新版本了，无需更新')
     }
@@ -109,7 +113,11 @@ class Package {
 
   // 获取入口文件的路由
   getRootFile() {
-    const dir = pkgDir(this.targetPath)
+    console.log(this.storePath)
+    console.log(this.targetPath)
+    console.log(this.cacheFilePath)
+    const dir = pkgDir(this.storePath ? this.cacheFilePath : this.targetPath)
+
     if (dir) {
       const pkgFile = require(path.join(dir, 'package.json'))
       if (pkgFile && pkgFile.main) {
