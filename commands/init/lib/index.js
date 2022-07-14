@@ -1,6 +1,6 @@
 'use strict'
-
-module.exports = init
+const Command = require('@flycc/command')
+class InitCommand extends Command {}
 
 /**
  * 初始化项目的命令
@@ -9,9 +9,9 @@ module.exports = init
  * @param {*} cmdObj 命令对象，可以获取到全局的命令参数
  */
 function init(name, options) {
-  console.log('init方法执行了')
-  console.log(name)
-  console.log(options)
-  console.log(process.env.CLI_TARGET_PATH)
-  console.log('发布新版本')
+  console.log('init方法执行了, 啦啦啦')
+  return new InitCommand()
 }
+
+module.exports = init
+// module.exports.InitCommand = InitCommand

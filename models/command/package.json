@@ -1,9 +1,9 @@
 {
-  "name": "@flycc/init",
-  "version": "1.0.12",
-  "description": "init",
+  "name": "@flycc/command",
+  "version": "1.0.0",
+  "description": "command",
   "author": "hucongcong <flycc258@163.com>",
-  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/init#readme",
+  "homepage": "https://github.com/hucongcong/flycc/tree/main/core/command#readme",
   "license": "ISC",
   "main": "lib/index.js",
   "directories": {
@@ -25,9 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/hucongcong/flycc/issues"
-  },
-  "gitHead": "576d6d4fe96cc5bfa0c33b112aceec77c8b11dfe",
-  "dependencies": {
-    "@flycc/command": "^1.0.0"
   }
 }

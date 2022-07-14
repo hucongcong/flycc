@@ -113,9 +113,9 @@ class Package {
 
   // 获取入口文件的路由
   getRootFile() {
-    console.log(this.storePath)
-    console.log(this.targetPath)
-    console.log(this.cacheFilePath)
+    // console.log(this.storePath)
+    // console.log(this.targetPath)
+    // console.log(this.cacheFilePath)
     const dir = pkgDir(this.storePath ? this.cacheFilePath : this.targetPath)
 
     if (dir) {

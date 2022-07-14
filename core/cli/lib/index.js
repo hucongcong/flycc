@@ -61,8 +61,8 @@ function core() {
     prepare()
     // 注册命令
     registerCommand()
-    log.success('cli', '初始化成功')
-    log.verbose('cli', 'debug模式开启')
+    // log.success('cli', '初始化成功')
+    // log.verbose('cli', 'debug模式开启')
   } catch (e) {
     log.error(e.message)
   }

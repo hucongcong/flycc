@@ -4,7 +4,7 @@ const semver = require('semver')
 const npm_url = 'https://registry.npmmirror.com/'
 // const npm_url = 'https://registry.npmjs.org/'
 function getNpmInfo() {
-  console.log(1)
+  // console.log(1)
   // TODO
 }
 

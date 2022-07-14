@@ -47,9 +47,11 @@ async function index() {
   // console.log(await pkg.exist())
   // 获取入口文件的路由
   const rootFile = pkg.getRootFile()
-  console.log(rootFile)
+  // console.log(rootFile)
   if (rootFile) {
+    // 在node主进程中调用
     require(rootFile).apply(null, arguments)
+    // 在node子进程中调用
   }
 }
 
