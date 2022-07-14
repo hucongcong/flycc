@@ -2,7 +2,7 @@
 const Package = require('@flycc/package')
 const userHome = require('user-home')
 const path = require('path')
-const log = require('@flycc/log')
+const cp = require('child_process')
 const SETTINGS = {
   init: '@flycc/init'
 }
@@ -51,9 +51,48 @@ async function index() {
   // console.log(rootFile)
   if (rootFile) {
     // 在node主进程中调用
-    require(rootFile).call(null, Array.from(arguments))
+    // require(rootFile).call(null, Array.from(arguments))
     // 在node子进程中调用
+    const args = Array.from(arguments)
+    const cmd = args[args.length - 1]
+    const o = Object.create(null)
+    Object.keys(cmd).forEach((item) => {
+      if (
+        cmd.hasOwnProperty(item) &&
+        !item.startsWith('_') &&
+        item !== 'parent'
+      ) {
+        o[item] = cmd[item]
+      }
+    })
+    args[args.length - 1] = o
+    // console.log(args)
+    const code = `require('${rootFile}').call(null, Array.from(${JSON.stringify(
+      args
+    )}))`
+    const child = spawn('node', ['-e', code], {
+      cwd: process.cwd(),
+      stdio: 'inherit'
+    })
+    child.on('error', (err) => {
+      console.log(err.message)
+      process.exit(1)
+    })
+    child.on('exit', (e) => {
+      console.log('命令执行成功' + e)
+      process.exit(e)
+    })
   }
+}
+
+// 兼容windows操作系统
+function spawn(command, args, options) {
+  const win32 = process.platform === 'win32'
+
+  const cmd = win32 ? 'cmd' : command
+
+  const cmdArgs = win32 ? ['-c'].concat(command, args) : args
+  return cp.spawn(cmd, cmdArgs, options || {})
 }
 
 module.exports = index
