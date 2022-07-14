@@ -2,6 +2,7 @@
 const Package = require('@flycc/package')
 const userHome = require('user-home')
 const path = require('path')
+const log = require('@flycc/log')
 const SETTINGS = {
   init: '@flycc/init'
 }
@@ -50,7 +51,7 @@ async function index() {
   // console.log(rootFile)
   if (rootFile) {
     // 在node主进程中调用
-    require(rootFile).apply(null, arguments)
+    require(rootFile).call(null, Array.from(arguments))
     // 在node子进程中调用
   }
 }

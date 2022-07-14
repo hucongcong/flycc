@@ -1,12 +1,10 @@
 'use strict'
 const pkg = require('../package.json')
-const semver = require('semver')
 const colors = require('colors')
 
 const { program } = require('commander')
 
 const log = require('@flycc/log')
-const { MIN_NODE_VERSION } = require('./constants')
 const path = require('path')
 // const init = require('@flycc/init')
 const exec = require('@flycc/exec')
@@ -16,19 +14,6 @@ const exec = require('@flycc/exec')
  */
 function checkPkgVersion() {
   // log.notice('cli', '当前脚手架版本' + pkg.version)
-}
-
-/**
- * 检查nodejs版本
- */
-function checkNodeVersion() {
-  const nodeVersion = process.version
-  // 对比版本
-  if (semver.lt(nodeVersion, MIN_NODE_VERSION)) {
-    throw new Error(
-      colors.red('当前nodejs版本过低，请升级至' + MIN_NODE_VERSION + '以上')
-    )
-  }
 }
 
 /**
@@ -143,8 +128,6 @@ function registerCommand() {
 function prepare() {
   // 检查当前脚手架版本
   checkPkgVersion()
-  // 检查nodejs版本
-  checkNodeVersion()
   // root用户降级处理
   checkRoot()
   // 检查环境变量

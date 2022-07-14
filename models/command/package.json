@@ -25,5 +25,10 @@
   },
   "bugs": {
     "url": "https://github.com/hucongcong/flycc/issues"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "semver": "^7.3.7",
+    "@flycc/log": "^1.0.10"
   }
 }
