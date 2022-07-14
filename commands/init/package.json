@@ -1,6 +1,6 @@
 {
   "name": "@flycc/init",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "init",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/init#readme",
@@ -28,6 +28,6 @@
   },
   "gitHead": "576d6d4fe96cc5bfa0c33b112aceec77c8b11dfe",
   "dependencies": {
-    "@flycc/command": "^1.0.13"
+    "@flycc/command": "^1.0.14"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@flycc/command",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "command",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/command#readme",
@@ -27,8 +27,8 @@
     "url": "https://github.com/hucongcong/flycc/issues"
   },
   "dependencies": {
+    "@flycc/log": "^1.0.10",
     "colors": "^1.4.0",
-    "semver": "^7.3.7",
-    "@flycc/log": "^1.0.10"
+    "semver": "^7.3.7"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@flycc/exec",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "exec command",
   "author": "hucongcong <flycc258@163.com>",
   "homepage": "https://github.com/hucongcong/flycc/tree/main/core/exec#readme",
@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "@flycc/get-npm-info": "^1.0.13",
-    "@flycc/package": "^1.0.13",
     "@flycc/log": "^1.0.0",
+    "@flycc/package": "^1.0.13",
     "user-home": "^3.0.0"
   },
   "gitHead": "576d6d4fe96cc5bfa0c33b112aceec77c8b11dfe"
